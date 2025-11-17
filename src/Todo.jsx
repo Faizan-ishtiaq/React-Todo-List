@@ -1,4 +1,6 @@
 import {useState} from 'react'
+import './Todo.css'
+
 
 function TodoList() {
    
@@ -20,24 +22,25 @@ function TodoList() {
 
 
   return (
-    <div>
-      <h1>Todo App</h1>
+    <div className='todo-container'>
+      <h1>To-do List</h1>
       <form onSubmit={handleSubmit}>
       
       <input 
          type='text'
+         className='todo-input'
          placeholder='Add your Todos'
          value={newTodo}
          onChange={(e)=>setNewTodos(e.target.value)}
          />
          
-          <button type='submit'>Add Todo</button>
+          <button type='submit' className='add-btn'>Add Todo</button>
       </form>
-      <ul>
+      <ul className='todo-list'>
         {todos.map((todos,index)=>(
-          <li key={index}>
+          <li key={index} className='todo-item'>
             <span style={{ textDecoration: todos.completed ? 'line-through': 'none' }}>{todos.text}</span>
-            <button onClick={()=>handleDelete(index)}>Delete</button>
+            <button className="delete-btn" onClick={()=>handleDelete(index)}>Delete</button>
           </li>
         ))}
       </ul>
