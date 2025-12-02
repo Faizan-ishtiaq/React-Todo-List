@@ -23,19 +23,20 @@ function TodoList() {
 
   return (
     <div className='todo-container'>
-      <h1>To-do List</h1>
-      <form onSubmit={handleSubmit}>
       
+      <form className='form' onSubmit={handleSubmit}>
+      <h1>Get Things Done!</h1>
       <input 
          type='text'
          className='todo-input'
-         placeholder='Add your Todos'
+         placeholder='What is the task today?'
          value={newTodo}
          onChange={(e)=>setNewTodos(e.target.value)}
+          
          />
-         
-          <button type='submit' className='add-btn'>Add Todo</button>
-      </form>
+          <button type='submit' className='add-btn'>Add Task</button>
+        
+     
       <ul className='todo-list'>
         {todos.map((todos,index)=>(
           <li key={index} className='todo-item'>
@@ -44,6 +45,7 @@ function TodoList() {
           </li>
         ))}
       </ul>
+       </form>
 
     </div>
   )
