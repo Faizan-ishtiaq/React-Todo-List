@@ -6,6 +6,11 @@
   --text: #ffffff;
   --muted: #cfc7e8;
 }
+*{
+  margin: 0;
+  padding: 0;
+  
+}
 
 /* page container (you can adjust if using inside other layout) */
 .todo-container {
