@@ -15,10 +15,15 @@ function TodoList() {
       }
     }
     const handleDelete=(index)=>{
-      const newTodos =[...todos];
-      newTodos[index].completed= !newTodos[index].completed
-      setTodos(newTodos)
+      setTodos(todos.filter((todo,i)=> i !== index))
     }
+
+  const handleToggle=(index)=>{
+    setTodos(todos.map((todo,i)=>
+     i == index ? {...todo,completed:!todo.completed}: todo
+    
+    ))
+  }
 
 
   return (
@@ -40,7 +45,7 @@ function TodoList() {
       <ul className='todo-list'>
         {todos.map((todos,index)=>(
           <li key={index} className='todo-item'>
-            <span style={{ textDecoration: todos.completed ? 'line-through': 'none' }}>{todos.text}</span>
+             <span onClick={()=>handleToggle(index)} className={todos.completed ? "completed" :""}>{todos.text}</span> 
             <button className="delete-btn" onClick={()=>handleDelete(index)}>Delete</button>
           </li>
         ))}

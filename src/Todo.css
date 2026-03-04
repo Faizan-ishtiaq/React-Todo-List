@@ -138,6 +138,10 @@
   background: rgba(0,0,0,0.08);
 }
 
+.completed{
+  text-decoration: line-through;
+  color: black;
+}
 
 
 /* small screens */
