@@ -24,14 +24,7 @@
   color: var(--text);
 }
 
-/* card-like center area */
-/* .title {
-  margin: 0 0 18px;
-  font-size: 28px;
-  font-weight: 700;
-  color: #fff;
-  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.12));
-} */
+
 
 .form {
   display: flex;
@@ -104,15 +97,8 @@
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
-/* text area: clickable to toggle complete */
-/* .todo-text {
-  flex: 1;
-  cursor: pointer;
-  user-select: none;
-  font-weight: 600;
-} */
 
-/* completed style */
+
 .todo-item.completed {
   background: rgba(0,0,0,0.06);
   color: rgba(255,255,255,0.75);
@@ -142,6 +128,18 @@
   text-decoration: line-through;
   color: black;
 }
+
+.length{
+  font-weight: bold;
+}
+
+.buttons{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+  
 
 
 /* small screens */

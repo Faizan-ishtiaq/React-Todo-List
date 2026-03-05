@@ -25,12 +25,15 @@ function TodoList() {
     ))
   }
 
+  const handleReset=()=>setTodos([])
+
 
   return (
     <div className='todo-container'>
       
       <form className='form' onSubmit={handleSubmit}>
       <h1>Get Things Done!</h1>
+      <p className='length'> Total Task : {todos.length}</p>
       <input 
          type='text'
          className='todo-input'
@@ -39,7 +42,10 @@ function TodoList() {
          onChange={(e)=>setNewTodos(e.target.value)}
           
          />
+         <div className='buttons'>
           <button type='submit' className='add-btn'>Add Task</button>
+          <button className='add-btn' onClick={handleReset}>Reset</button>
+          </div>
         
      
       <ul className='todo-list'>
