@@ -1,11 +1,20 @@
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import './Todo.css'
 
 
 function TodoList() {
    
     const [newTodo,setNewTodos] = useState('')
-    const [todos,setTodos] =useState([])
+    const [todos,setTodos] =useState(()=>{
+       const saved=localStorage.getItem("todos");
+       return saved? JSON.parse(saved):[];
+
+    });
+
+    useEffect(()=>{
+      localStorage.setItem("todos",JSON.stringify(todos))
+    },[todos])
+
 
     const handleSubmit=(e)=>{
       e.preventDefault();
